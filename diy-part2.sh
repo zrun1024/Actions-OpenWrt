@@ -18,3 +18,9 @@
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+
+# Fix Rust 1.90.0 host-compile failure (missing vendor/*/Cargo.toml.orig).
+# patch-kernel.sh deletes all *.orig files after applying patches, but Rust's
+# source tarball ships Cargo.toml.orig files that are referenced in its
+# integrity checksums. Stop removing them. See openwrt/openwrt#20141.
+sed -i "/-name '\*\.orig'/d" scripts/patch-kernel.sh
