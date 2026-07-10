@@ -13,8 +13,8 @@
 name: Update Checker
 
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
-  REPO_BRANCH: 2410
+  REPO_URL: https://github.com/zrun1024/immortalwrt-mt798x-6.6.git
+  REPO_BRANCH: zrun
 
 on:
   workflow_dispatch:
